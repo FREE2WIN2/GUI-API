@@ -20,7 +20,7 @@ public class HeadItem extends Item{
         this.owner = owner;
     }
 
-
+    @SuppressWarnings("deprecation")
     @Override
     public ItemStack build() {
         itemStack = new ItemStack(Material.PLAYER_HEAD);

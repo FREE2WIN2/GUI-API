@@ -95,6 +95,8 @@ public class GUI {
                 continue;
             inv.setItem(i, is);
         }
+        System.out.println("test");
+    p.openInventory(inv);
     }
 
     /**

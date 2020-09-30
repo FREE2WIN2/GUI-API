@@ -3,6 +3,7 @@ package net.wargearworld.GUI_API;
 
 import net.wargearworld.GUI_API.GUI.GUI;
 import net.wargearworld.GUI_API.Listener.InventoryClickEventListener;
+import net.wargearworld.GUI_API.Listener.InventoryCloseEventListener;
 import net.wargearworld.StringGetter.IStringGetter;
 import net.wargearworld.StringGetter.Language;
 import org.bukkit.Bukkit;
@@ -18,14 +19,11 @@ public class GUI_API {
     public GUI_API(Plugin plugin, IStringGetter stringGetter) {
         openedGUIs = new HashMap<>();
         Bukkit.getPluginManager().registerEvents(new InventoryClickEventListener(),plugin);
+        Bukkit.getPluginManager().registerEvents(new InventoryCloseEventListener(),plugin);
         this.stringGetter = stringGetter;
     }
 
-    protected static void registerGUI(GUI gui){
-
-    }
-
-    public static String getString(Language lang, String key, String... args){
+       public static String getString(Language lang, String key, String... args){
         return stringGetter.getString(lang,key,args);
     }
 }

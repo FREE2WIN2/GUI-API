@@ -19,4 +19,13 @@ public class ItemBuilder {
         }
         return null;
     }
+    public static Item build(Executor<ArgumentList> executor, Material mat, int amount, ItemType type, String name) {
+        switch (type){
+            case HEAD:
+                return new HeadItem(mat,name,amount).setExecutor(executor);
+            case DEFAULT:
+                return new DefaultItem(mat,name,amount).setExecutor(executor);
+        }
+        return null;
+    }
 }
